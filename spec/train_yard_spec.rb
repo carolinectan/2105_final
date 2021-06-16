@@ -28,6 +28,16 @@ RSpec.describe TrainYard do
       @train4.add_cars(@car3, 10)
     end
 
+    it 'exists' do
+      expect(@train_yard).to be_a(TrainYard)
+    end
+
+    it 'initializes with attributes' do
+      expect(@train_yard.location).to eq('Brighton')
+      expect(@train_yard.trains).to eq([])
+
+    end
+
     it 'can add trains to the train yard' do
       @train_yard.add_train(@train1)
       @train_yard.add_train(@train2)
