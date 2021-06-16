@@ -41,8 +41,10 @@ class TrainYard
    hash
  end
 
-
-  # Your TrainYard will also be able to identify `overflow_cars` A car is overflowing if it is carried by more
-  # than one train and there are more than ten cars.
-
+ def overflow_cars
+   cars = []
+   total_inventory.filter_map do |car, amt|
+     cars << car if amt > 10 && trains_containing(car).length > 1
+   end.flatten
+ end
 end
