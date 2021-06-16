@@ -19,7 +19,4 @@ RSpec.describe Car do
     expect(@car2.type).to eq('Passengers')
     expect(@car2.weight).to eq(1)
   end
-
 end
-
-#
